@@ -1,13 +1,5 @@
-// src/components/ui/Tag.tsx
-import React from 'react'
-
-interface TagProps {
-  children: React.ReactNode
-  color?: 'blue' | 'yellow' | 'sky' | 'green' | 'purple' | 'zinc'
-}
-
-function Tag({ children, color = 'zinc' }: TagProps) {
-  const colorStyles = {
+export default function Tag({ children, color = 'zinc' }: { children: string, color?: 'blue' | 'yellow' | 'sky' | 'green' | 'purple' | 'zinc' }) {
+  const themes = {
     blue: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
     yellow: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20',
     sky: 'bg-sky-500/10 text-sky-400 border-sky-500/20',
@@ -15,12 +7,9 @@ function Tag({ children, color = 'zinc' }: TagProps) {
     purple: 'bg-purple-500/10 text-purple-400 border-purple-500/20',
     zinc: 'bg-zinc-800 text-zinc-300 border-zinc-700'
   }
-
   return (
-    <span className={`px-3 py-1 rounded-full text-xs font-medium border ${colorStyles[color]}`}>
+    <span className={`px-2.5 py-1 rounded-lg text-[0.7rem] font-bold border ${themes[color]}`}>
       {children}
     </span>
   )
 }
-
-export default Tag

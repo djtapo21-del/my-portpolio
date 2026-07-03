@@ -1,0 +1,296 @@
+﻿import AboutCard from './components/AboutCard'
+import ContactCard from './components/ContactCard'
+import SkillsCard from './components/SkillsCard'
+import ProjectCard from './components/ProjectCard'
+import SectionHeader from './components/ui/SectionHeader'
+import Box from './components/ui/Box'
+import Typography from './components/ui/Typography'
+import heroImage from './assets/hero.png'
+
+export default function App() {
+  return (
+    <div className="min-h-screen bg-page-bg p-6 md:p-12 flex flex-col items-center gap-y-16">
+
+      {/* Profile Section */}
+      <div className="w-full max-w-6xl flex flex-col">
+        <SectionHeader title="Professional Profile" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full text-left">
+          <AboutCard />
+          <ContactCard />
+          <SkillsCard />
+        </div>
+      </div>
+
+      <div className="w-full max-w-6xl h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+      {/* Projects Section */}
+      <div className="w-full max-w-6xl flex flex-col">
+        <SectionHeader title="Featured Projects" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
+          <ProjectCard title="Portfolio Website" desc="React? Tailwind CSS瑜??ъ슜??紐⑤뜕 踰ㅽ넗 洹몃━?? image={heroImage} link="#" />
+          <ProjectCard title="Task Manager" desc="TypeScript 湲곕컲??怨좎꽦??????愿由??꾧뎄" image={heroImage} link="#" />
+          <ProjectCard title="Weather App" desc="API ?곕룞???듯븳 ?ㅼ떆媛?湲곗긽 ?뺣낫 ?쒕퉬?? image={heroImage} link="#" />
+
+          {/* Coming Soon Placeholder */}
+          <Box padding="large" rounded="extra" className="aspect-square justify-center items-center opacity-30 border-dashed">
+            <Typography variant="h2" className="text-zinc-600">Coming Soon</Typography>
+          </Box>
+        </div>
+      </div>
+    </div>
+  )
+}
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.tsx'
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+import Box from './ui/Box'
+import Typography from './ui/Typography'
+
+export default function AboutCard() {
+    return (
+        <Box as="section" padding="large" rounded="extra" gap="large" className="md:col-span-2 text-left">
+            <Typography variant="h1">
+                ?덈뀞?섏꽭?? ?⑥쑉?곸씤 肄붾뱶瑜?怨좊??섎뒗 <br />
+                <span className="text-blue-500">?띻만??/span>?낅땲?? ?몝
+            </Typography>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <Box variant="interactive" padding="medium" gap="small">
+                    <Typography variant="label">Experience</Typography>
+                    <Typography variant="h3">2+ Years</Typography>
+                </Box>
+                <Box variant="interactive" padding="medium" gap="small">
+                    <Typography variant="label">Projects</Typography>
+                    <Typography variant="h3">12+ Done</Typography>
+                </Box>
+                <Box variant="interactive" padding="medium" gap="small">
+                    <Typography variant="label">Location</Typography>
+                    <Typography variant="h3">Seoul, KR</Typography>
+                </Box>
+                <Box variant="interactive" padding="medium" gap="small">
+                    <Typography variant="label">Status</Typography>
+                    <div className="flex items-center gap-x-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                        <Typography variant="h3">Available</Typography>
+                    </div>
+                </Box>
+            </div>
+
+            <Typography variant="body" className="mt-auto max-w-2xl text-left">
+                蹂듭옟??臾몄젣瑜??⑥닚?섍쾶 ?닿껐?섎뒗 怨쇱젙?먯꽌 利먭굅????먮굧?덈떎. ?ъ슜??以묒떖??吏곴??곸씤 ?명꽣?섏씠?ㅻ? 留뚮뱶??寃껋쓣 紐⑺몴濡??⑸땲??
+            </Typography>
+        </Box>
+    )
+}
+import Box from './ui/Box'
+import Typography from './ui/Typography'
+
+export default function ContactCard() {
+  return (
+    <Box as="section" padding="large" rounded="extra" gap="medium" className="h-full text-left">
+      <div className="flex flex-col gap-y-1">
+        <Typography variant="h2">Connect</Typography>
+        <Typography variant="caption">?④퍡 ?뚰넻?섎ŉ ???섏? 媛移섎? 留뚮뱾?닿컩?덈떎.</Typography>
+      </div>
+
+      <div className="flex flex-col gap-y-2 mt-auto">
+        <Box as="a" href="mailto:email@gmail.com" variant="interactive" padding="small" className="flex-row items-center justify-between">
+          <div className="flex items-center gap-x-3 text-left">
+            <div className="w-6 flex justify-center items-center shrink-0 text-lg">?벁</div>
+            <div className="flex flex-col">
+              <Typography variant="label">Email</Typography>
+              <Typography variant="item">email@gmail.com</Typography>
+            </div>
+          </div>
+          <Typography variant="item" className="text-zinc-600">??/Typography>
+        </Box>
+
+        <Box as="a" href="https://github.com" variant="interactive" padding="small" className="flex-row items-center justify-between">
+          <div className="flex items-center gap-x-3 text-left">
+            <div className="w-6 flex justify-center items-center shrink-0 text-lg">?릻</div>
+            <div className="flex flex-col">
+              <Typography variant="label">GitHub</Typography>
+              <Typography variant="item">github.com/username</Typography>
+            </div>
+          </div>
+          <Typography variant="item" className="text-zinc-600">??/Typography>
+        </Box>
+
+        <Box as="a" href="tel:010-1234-5678" variant="interactive" padding="small" className="flex-row items-center justify-between">
+          <div className="flex items-center gap-x-3 text-left">
+            <div className="w-6 flex justify-center items-center shrink-0 text-lg">?벑</div>
+            <div className="flex flex-col">
+              <Typography variant="label">Phone</Typography>
+              <Typography variant="item">010-1234-5678</Typography>
+            </div>
+          </div>
+          <Typography variant="item" className="text-zinc-600">??/Typography>
+        </Box>
+      </div>
+    </Box>
+  )
+}
+import Box from './ui/Box'
+import Typography from './ui/Typography'
+
+interface ProjectCardProps {
+  title: string; desc: string; image: string; link: string;
+}
+
+export default function ProjectCard({ title, desc, image, link }: ProjectCardProps) {
+  return (
+    <Box as="article" padding="large" rounded="extra" gap="small" className="aspect-square text-left">
+      <Typography variant="h2" className="line-clamp-1">{title}</Typography>
+      <Typography variant="body" className="line-clamp-2">{desc}</Typography>
+
+      <Box as="a" href={link} padding="none" rounded="standard" className="mt-auto aspect-video border-white/5">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 font-normal"
+        />
+      </Box>
+    </Box>
+  )
+}
+import Box from './ui/Box'
+import Typography from './ui/Typography'
+import Tag from './ui/Tag'
+
+export default function SkillsCard() {
+    return (
+        <Box as="section" padding="large" rounded="extra" gap="medium" className="md:col-span-3 text-left">
+            <div className="flex flex-col gap-y-1">
+                <Typography variant="h2">Tech Stack</Typography>
+                <Typography variant="caption">?⑥쑉?곸씤 臾몄젣 ?닿껐???꾪빐 ?쒖슜?섎뒗 二쇱슂 ?꾧뎄?ㅼ엯?덈떎.</Typography>
+            </div>
+            <div className="flex flex-wrap gap-2 mt-auto">
+                <Tag color="blue">React</Tag>
+                <Tag color="yellow">TypeScript</Tag>
+                <Tag color="sky">Tailwind CSS</Tag>
+                <Tag color="green">Node.js</Tag>
+                <Tag color="purple">Redux</Tag>
+                <Tag color="zinc">Git</Tag>
+                <Tag color="blue">Next.js</Tag>
+            </div>
+        </Box>
+    )
+}
+// src/components/ui/Box.tsx
+import React from 'react'
+
+interface BoxProps extends React.HTMLAttributes<HTMLElement> {
+  as?: 'div' | 'section' | 'article' | 'a' | 'button'
+  variant?: 'default' | 'interactive' | 'none'
+  padding?: 'none' | 'small' | 'medium' | 'large'
+  gap?: 'none' | 'small' | 'medium' | 'large' // ?대? 媛꾧꺽 異붽?
+  rounded?: 'none' | 'standard' | 'extra'
+  href?: string
+}
+
+export default function Box({
+  as: Tag = 'div',
+  variant = 'default',
+  padding = 'medium',
+  gap = 'none', // 湲곕낯媛?none
+  rounded = 'standard',
+  className = '',
+  children,
+  ...props
+}: BoxProps) {
+
+  const styles = {
+    base: "flex flex-col border transition-all duration-300 overflow-hidden",
+    variant: {
+      none: "border-transparent bg-transparent",
+      default: "bg-white/5 border-white/10 text-white",
+      interactive: `
+        bg-white/5 border-white/10 cursor-pointer group/box active:scale-[0.98]
+        text-zinc-300 [--box-text:theme(colors.zinc.300)] 
+        hover:bg-white/10 hover:border-white/20 hover:[--box-text:white] 
+        transition-all duration-300
+      `
+    },
+    padding: {
+      none: "p-0",
+      small: "p-3",
+      medium: "p-4 md:p-5",
+      large: "p-6 md:p-8"
+    },
+    gap: { // 媛꾧꺽 怨듯넻 ?뺤쓽
+      none: "gap-0",
+      small: "gap-2",  // 8px
+      medium: "gap-4", // 16px
+      large: "gap-8"   // 32px
+    },
+    rounded: {
+      none: "rounded-none",
+      standard: "rounded-xl",
+      extra: "rounded-[24px] md:rounded-[32px]"
+    }
+  }
+
+  return (
+    <Tag
+      className={`${styles.base} ${styles.variant[variant]} ${styles.padding[padding]} ${styles.gap[gap]} ${styles.rounded[rounded]} ${className}`}
+      {...props}
+    >
+      {children}
+    </Tag>
+  )
+}
+import Typography from './Typography'
+
+export default function SectionHeader({ title }: { title: string }) {
+  return (
+    <div className="w-full max-w-6xl px-2 mb-6 border-l-2 border-blue-600 pl-4 text-left">
+      <Typography variant="label" className="text-zinc-500 font-black">
+        {title}
+      </Typography>
+    </div>
+  )
+}
+export default function Tag({ children, color = 'zinc' }: { children: string, color?: 'blue' | 'yellow' | 'sky' | 'green' | 'purple' | 'zinc' }) {
+  const themes = {
+    blue: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
+    yellow: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20',
+    sky: 'bg-sky-500/10 text-sky-400 border-sky-500/20',
+    green: 'bg-green-500/10 text-green-400 border-green-500/20',
+    purple: 'bg-purple-500/10 text-purple-400 border-purple-500/20',
+    zinc: 'bg-zinc-800 text-zinc-300 border-zinc-700'
+  }
+  return (
+    <span className={`px-2.5 py-1 rounded-lg text-[11px] font-bold border ${themes[color]}`}>
+      {children}
+    </span>
+  )
+}
+import React from 'react'
+
+interface TypographyProps {
+  variant?: 'h1' | 'h2' | 'h3' | 'body' | 'label' | 'caption' | 'item'
+  children: React.ReactNode
+  className?: string
+}
+
+export default function Typography({ variant = 'body', children, className = '' }: TypographyProps) {
+  const styles = {
+    h1: "text-2xl md:text-3xl font-bold tracking-tight text-white leading-tight",
+    h2: "text-lg md:text-xl font-bold text-white tracking-tight text-left",
+    h3: "text-base md:text-lg font-semibold text-zinc-100 text-left",
+    body: "text-sm md:text-base text-zinc-400 leading-relaxed font-normal text-left",
+    label: "text-[10px] md:text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-500 leading-none",
+    caption: "text-xs text-zinc-500 font-medium",
+    item: "text-sm font-medium text-left transition-colors duration-300 text-[var(--box-text)]"
+  }
+
+  const Tag = variant.startsWith('h') ? (variant as any) : 'p'
+  return <Tag className={`${styles[variant]} ${className}`}>{children}</Tag>
+}
