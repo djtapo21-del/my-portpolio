@@ -1,17 +1,40 @@
 /* src/index.css */
+@font-face {
+    font-family: "Pretendard Variable";
+    src: url("./assets/PretendardVariable.woff2") format("woff2-variations");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
 
 @import "tailwindcss";
 
 @theme {
+    --font-sans: "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+
     --color-page-bg: #09090b;
-    --color-card-bg: #121214;
-    --color-card-border: rgba(255, 255, 255, 0.1);
-    --radius-card: 24px;
+    --color-surface: rgba(255, 255, 255, 0.04);
+    --color-card-border: rgba(255, 255, 255, 0.08);
+
+    --color-text-main: #ffffff;
+    --color-text-body: #d4d4d8;
+    --color-text-muted: #a1a1aa;
+
+    --color-brand-high: #3b82f6;
+    --color-brand-mid: #0ea5e9;
+    --color-brand-low: #71717a;
+
+    --color-tag-blue: #3b82f6;
+    --color-tag-yellow: #eab308;
+    --color-tag-sky: #0ea5e9;
+    --color-tag-green: #22c55e;
+    --color-tag-purple: #a855f7;
+    --color-tag-zinc: #71717a;
 }
 
 body {
     background-color: var(--color-page-bg);
-    font-family: 'Inter', sans-serif;
-    /* 폰트 하나로 통일 */
-    color: white;
+    color: var(--color-text-main);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
 }

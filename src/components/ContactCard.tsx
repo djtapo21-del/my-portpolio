@@ -1,51 +1,113 @@
-import Box from './ui/Box'
-import Typography from './ui/Typography'
+// src/components/ContactCard.tsx
+import { Card } from './ui/Card'
+import { Title, Body, SubTitle, Label, Caption } from './ui/Text'
 
 export default function ContactCard() {
   return (
-    <Box as="section" padding="large" rounded="extra" gap="medium" className="h-full text-left">
-      <div className="flex flex-col gap-y-1.5">
-        <Typography variant="h2">Connect</Typography>
-        {/* variant를 body로 변경하고 문구 업데이트 */}
-        <Typography variant="body">
-          협업 제안이나 기술적인 대화는 언제든 환영합니다. 아래 채널로 편하게 연락주세요.
-        </Typography>
+    <Card span={2}>
+      {/* 1. 상단 인사말 */}
+      <div className="flex flex-col gap-3">
+        <h1 className="text-2xl md:text-3xl font-semibold text-white tracking-wide leading-tight">
+          사용자 경험을 코드로 설계하는 <br />
+          <span className="text-brand-high">홍길동</span>입니다. 👋
+        </h1>
+        <Body>
+          복잡한 비즈니스 로직을 직관적인 UI로 풀어내는 것을 좋아하며,
+          디자인 감각을 바탕으로 픽셀 단위까지 완성도 있는 결과물을 만들어냅니다.
+        </Body>
       </div>
 
-      <div className="flex flex-col gap-y-2 mt-auto">
-        <Box as="a" href="mailto:email@gmail.com" variant="interactive" padding="small" className="flex-row items-center justify-between">
-          <div className="flex items-center gap-x-3 text-left">
-            <div className="w-6 flex justify-center items-center shrink-0 text-lg leading-none">📧</div>
-            <div className="flex flex-col">
-              <Typography variant="label">Email</Typography>
-              <Typography variant="item">email@gmail.com</Typography>
-            </div>
-          </div>
-          <Typography variant="item" className="text-zinc-600">→</Typography>
-        </Box>
+      {/* 2. 하단 그리드 */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-auto">
 
-        <Box as="a" href="https://github.com" variant="interactive" padding="small" className="flex-row items-center justify-between">
-          <div className="flex items-center gap-x-3 text-left">
-            <div className="w-6 flex justify-center items-center shrink-0 text-lg leading-none">🐙</div>
-            <div className="flex flex-col">
-              <Typography variant="label">GitHub</Typography>
-              <Typography variant="item">github.com/username</Typography>
+        {/* 인적 사항 */}
+        <Card variant="tile" className="p-5">
+          <div className="flex flex-col gap-y-3.5">
+            <div className="flex flex-col gap-y-0.5">
+              <Label>Birth</Label>
+              <SubTitle>1999. 05. 20</SubTitle>
+            </div>
+            <div className="flex flex-col gap-y-0.5">
+              <Label>Location</Label>
+              <SubTitle>부산광역시 수영구</SubTitle>
+            </div>
+            <div className="flex flex-col gap-y-0.5">
+              <Label>Military</Label>
+              <SubTitle>군필 (공군 병장 만기전역)</SubTitle>
+            </div>
+            <div className="flex flex-col gap-y-0.5">
+              <Label>Education</Label>
+              <SubTitle className="leading-snug">한국폴리텍대학 섬유패션캠퍼스</SubTitle>
+              <Caption>텍스타일컬러디자인과 | 2018.02 졸업</Caption>
+            </div>
+            <div className="flex flex-col gap-y-0.5">
+              <Label>Job Status</Label>
+              <SubTitle className="text-brand-high">신입 / 정규직 희망</SubTitle>
             </div>
           </div>
-          <Typography variant="item" className="text-zinc-600">→</Typography>
-        </Box>
+        </Card>
 
-        <Box as="a" href="tel:010-1234-5678" variant="interactive" padding="small" className="flex-row items-center justify-between">
-          <div className="flex items-center gap-x-3 text-left">
-            <div className="w-6 flex justify-center items-center shrink-0 text-lg leading-none">📱</div>
-            <div className="flex flex-col">
-              <Typography variant="label">Phone</Typography>
-              <Typography variant="item">010-1234-5678</Typography>
+        {/* 오른쪽 영역 */}
+        <div className="flex flex-col gap-4">
+          {/* 자격증 타일 */}
+          <Card variant="tile" className="p-5">
+            <div className="flex flex-col gap-3">
+              <Label>Certificates</Label>
+              <div className="flex items-center justify-between">
+                <SubTitle>컴퓨터그래픽스운용기능사</SubTitle>
+                <Caption>2015.12</Caption>
+              </div>
+              <div className="flex items-center justify-between">
+                <SubTitle>웹디자인기능사</SubTitle>
+                <Caption>2015.11</Caption>
+              </div>
+              <div className="flex items-center justify-between">
+                <SubTitle>전자출판기능사</SubTitle>
+                <Caption>2015.09</Caption>
+              </div>
+              <div className="flex items-center justify-between">
+                <SubTitle>섬유디자인산업기사</SubTitle>
+                <Caption>2017.08</Caption>
+              </div>
             </div>
-          </div>
-          <Typography variant="item" className="text-zinc-600">→</Typography>
-        </Box>
+          </Card>
+
+          {/* 연락처 타일 (완벽하게 1줄 형태로 평평화) */}
+          <Card variant="tile" className="p-5">
+            <div className="flex flex-col gap-3">
+              <Label>Contact Channel</Label>
+              <div className="flex flex-col gap-y-3.5 pt-1">
+
+                {/* 이메일 (가로 1줄 정렬) */}
+                <a
+                  href="mailto:email@gmail.com"
+                  className="flex items-center gap-x-3 text-text-body hover:text-white transition-colors duration-300 group"
+                >
+                  <span className="text-lg leading-none shrink-0">📧</span>
+                  <div className="flex items-center gap-x-2">
+                    <Label className="text-[10px] text-text-muted group-hover:text-brand-high transition-colors">Email</Label>
+                    <Body className="font-semibold text-text-body group-hover:text-white transition-colors">email@gmail.com</Body>
+                  </div>
+                </a>
+
+                {/* 전화번호 (가로 1줄 정렬) */}
+                <a
+                  href="tel:010-1234-5678"
+                  className="flex items-center gap-x-3 text-text-body hover:text-white transition-colors duration-300 group"
+                >
+                  <span className="text-lg leading-none shrink-0">📱</span>
+                  <div className="flex items-center gap-x-2">
+                    <Label className="text-[10px] text-text-muted group-hover:text-brand-high transition-colors">Phone</Label>
+                    <Body className="font-semibold text-text-body group-hover:text-white transition-colors">010-1234-5678</Body>
+                  </div>
+                </a>
+
+              </div>
+            </div>
+          </Card>
+        </div>
+
       </div>
-    </Box>
+    </Card>
   )
 }

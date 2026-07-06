@@ -1,23 +1,34 @@
-import Box from './ui/Box'
-import Typography from './ui/Typography'
+// src/components/ProjectCard.tsx
+import { Card } from './ui/Card'
+import { SubTitle, Body } from './ui/Text'
 
 interface ProjectCardProps {
-  title: string; desc: string; image: string; link: string;
+  title: string;
+  desc: string;
+  image: string;
+  link: string;
 }
 
 export default function ProjectCard({ title, desc, image, link }: ProjectCardProps) {
   return (
-    <Box as="article" padding="large" rounded="extra" gap="small" className="aspect-square text-left">
-      <Typography variant="h2" className="line-clamp-1">{title}</Typography>
-      <Typography variant="body" className="line-clamp-2">{desc}</Typography>
+    <Card className="aspect-square text-left p-6 gap-3">
+      <div className="flex flex-col gap-y-1">
+        <SubTitle className="line-clamp-1">{title}</SubTitle>
+        <Body className="line-clamp-2">{desc}</Body>
+      </div>
 
-      <Box as="a" href={link} padding="none" rounded="standard" className="mt-auto aspect-video border-white/5">
+      <Card
+        as="a"
+        href={link}
+        target="_blank"
+        className="mt-auto aspect-video border-white/5 overflow-hidden p-0 rounded-xl"
+      >
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 font-normal"
+          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
         />
-      </Box>
-    </Box>
+      </Card>
+    </Card>
   )
 }
