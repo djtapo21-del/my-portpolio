@@ -4,8 +4,10 @@ import { Title, Body, SubTitle, Label, Caption } from './ui/Text'
 
 export default function ContactCard() {
   return (
+    // 1단계 메인 카드 (span 2칸 점유, 모바일 테두리 정상 작동)
     <Card span={2}>
-      {/* 1. 상단 인사말 */}
+
+      {/* 1. 상단 메인 인사말 영역 (카드로 감싸지 않고 텍스트 그대로 노출) */}
       <div className="flex flex-col gap-3">
         <h1 className="text-2xl md:text-3xl font-semibold text-white tracking-wide leading-tight">
           사용자 경험을 코드로 설계하는 <br />
@@ -17,10 +19,10 @@ export default function ContactCard() {
         </Body>
       </div>
 
-      {/* 2. 하단 그리드 */}
+      {/* 2. 하단 상세 정보 영역 (2단계 타일 카드로 나누어 수납) */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-auto">
 
-        {/* 인적 사항 */}
+        {/* 2단계 카드 1: 인적 사항 */}
         <Card variant="tile" className="p-5">
           <div className="flex flex-col gap-y-3.5">
             <div className="flex flex-col gap-y-0.5">
@@ -47,9 +49,10 @@ export default function ContactCard() {
           </div>
         </Card>
 
-        {/* 오른쪽 영역 */}
+        {/* 오른쪽 영역 (자격증 타일 + 연락처 타일의 수직 스택) */}
         <div className="flex flex-col gap-4">
-          {/* 자격증 타일 */}
+
+          {/* 2단계 카드 2: 자격증 타일 */}
           <Card variant="tile" className="p-5">
             <div className="flex flex-col gap-3">
               <Label>Certificates</Label>
@@ -72,31 +75,31 @@ export default function ContactCard() {
             </div>
           </Card>
 
-          {/* 연락처 타일 (완벽하게 1줄 형태로 평평화) */}
+          {/* 2단계 카드 3: 연락처 타일 */}
           <Card variant="tile" className="p-5">
             <div className="flex flex-col gap-3">
               <Label>Contact Channel</Label>
-              <div className="flex flex-col gap-y-3.5 pt-1">
+              <div className="flex flex-col gap-y-3 pt-1">
 
-                {/* 이메일 (가로 1줄 정렬) */}
+                {/* 이메일 */}
                 <a
                   href="mailto:email@gmail.com"
                   className="flex items-center gap-x-3 text-text-body hover:text-white transition-colors duration-300 group"
                 >
                   <span className="text-lg leading-none shrink-0">📧</span>
-                  <div className="flex items-center gap-x-2">
+                  <div className="flex flex-col">
                     <Label className="text-[10px] text-text-muted group-hover:text-brand-high transition-colors">Email</Label>
                     <Body className="font-semibold text-text-body group-hover:text-white transition-colors">email@gmail.com</Body>
                   </div>
                 </a>
 
-                {/* 전화번호 (가로 1줄 정렬) */}
+                {/* 전화번호 */}
                 <a
                   href="tel:010-1234-5678"
                   className="flex items-center gap-x-3 text-text-body hover:text-white transition-colors duration-300 group"
                 >
                   <span className="text-lg leading-none shrink-0">📱</span>
-                  <div className="flex items-center gap-x-2">
+                  <div className="flex flex-col">
                     <Label className="text-[10px] text-text-muted group-hover:text-brand-high transition-colors">Phone</Label>
                     <Body className="font-semibold text-text-body group-hover:text-white transition-colors">010-1234-5678</Body>
                   </div>

@@ -11,7 +11,8 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ title, desc, image, link }: ProjectCardProps) {
   return (
-    <Card className="aspect-square text-left p-6 gap-3">
+    // p-6 수기 패딩을 제거하여 전체 위계와 양옆 정렬선을 일치시킴
+    <Card className="aspect-square text-left gap-3">
       <div className="flex flex-col gap-y-1">
         <SubTitle className="line-clamp-1">{title}</SubTitle>
         <Body className="line-clamp-2">{desc}</Body>
