@@ -1,5 +1,0 @@
-﻿Get-ChildItem -Path src -Include *.ts,*.tsx,*.css -Recurse | Get-Content | Out-File all_files.txt
-
-npm run dev
-
-UnoCSS

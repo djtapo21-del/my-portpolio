@@ -34,8 +34,8 @@ export default function ProjectsCard() {
 
       {/* 1단계 부모 카드 상단 헤더 */}
       <div className="flex flex-col gap-1.5 pb-4 border-b border-white/[0.06]">
-        <Title>Featured Projects</Title>
-        <Body>React와 Tailwind CSS를 활용한 모던 벤토 그리드 아키텍처 기반의 개인 웹사이트</Body>
+        <Title>국립공원공단</Title>
+        <Body>반응형 웹 디자인을 구현한 국립공원공단 웹사이트 리뉴얼 프로젝트</Body>
       </div>
 
       {/* 2단계 내부 프로젝트 타일 리스트 */}
@@ -52,7 +52,7 @@ export default function ProjectsCard() {
             className="w-full aspect-video overflow-hidden block rounded-xl"
           >
             <AutoImage
-              src="/projects/portfolio.webp"
+              src="/projects/project01.png"
               text="PORTFOLIO"
               color="bg-tag-blue/10 border border-tag-blue/20 text-tag-blue"
             />
@@ -63,16 +63,16 @@ export default function ProjectsCard() {
             <Title className="text-base leading-snug line-clamp-1">나만의 포트폴리오 제작</Title>
 
             <div className="flex flex-wrap gap-1.5">
-              <Tag color="blue">React</Tag>
-              <Tag color="zinc">Tailwind CSS</Tag>
-              <Tag color="zinc">Vite</Tag>
+              <Tag color="zinc">HTML</Tag>
+              <Tag color="blue">CSS</Tag>
+              <Tag color="yellow">JS</Tag>
             </div>
 
             <Body className="line-clamp-2">React와 Tailwind CSS를 활용한 모던 벤토 그리드 아키텍처 기반의 개인 웹사이트</Body>
 
             {/* [링크 분리 2] 버튼 클릭 시: 깃허브 페이지 실배포 라이브 사이트로 연결 (모션 제거, 색상 전환만 유지) */}
             <a
-              href="https://username.github.io/portfolio"
+              href="https://www.knps.or.kr/portal/main.do"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-x-1.5 mt-1 group/link w-fit"

@@ -1,24 +1,41 @@
-# Logs
-logs
+# 1. 의존성 및 패키지 캐시 (가장 무거우므로 절대 업로드 금지)
+node_modules/
+.npm/
+.pnp
+.pnp.js
+
+# 2. 빌드 결과물 (배포 시 자동으로 생성되므로 소스 저장소에서 제외)
+dist/
+build/
+out/
+
+# 3. 로그 및 에러 레포트
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# 4. 로컬 환경 변수 및 비밀 키 (보안 파일)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# 5. OS 및 에디터 전용 캐시/메타데이터
 .DS_Store
+Thumbs.db
+.idea/
+.vscode/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+*.tsbuildinfo
+
+# 6. 작업용 임시 생성 파일 (우리 대화에서 사용한 도구들 제외)
+all_files.txt
+exports.txt
+merge.js
