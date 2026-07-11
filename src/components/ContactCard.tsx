@@ -10,12 +10,12 @@ export default function ContactCard() {
       {/* 1. 상단 메인 인사말 */}
       <div className="flex flex-col gap-3 pb-4 border-b border-white/[0.06]">
         <h1 className="text-2xl md:text-3xl font-semibold text-white tracking-wide leading-tight">
-          사용자 경험을 코드로 설계하는 <br />
-          <span className="text-brand-high">홍길동</span>입니다. 👋
+          바퀴를 다시 만들지 않는 <br />
+          <span className="text-brand-high">문정우</span>입니다. 🚀
         </h1>
         <Body>
-          복잡한 비즈니스 로직을 직관적인 UI로 풀어내는 것을 좋아하며,
-          디자인 감각을 바탕으로 픽셀 단위까지 완성도 있는 결과물을 만들어냅니다.
+          AI 기반 개발 워크플로우를 활용하여
+          빠르고 효율적인 웹 애플리케이션을 구축합니다.
         </Body>
       </div>
 
@@ -27,7 +27,7 @@ export default function ContactCard() {
           <div className="flex flex-col gap-y-3.5">
             <div className="flex flex-col gap-y-0.5">
               <Label>Birth</Label>
-              <SubTitle>1997. 03. 21</SubTitle>
+              <SubTitle>97년생 / 만 29세</SubTitle>
             </div>
             <div className="flex flex-col gap-y-0.5">
               <Label>Location</Label>
