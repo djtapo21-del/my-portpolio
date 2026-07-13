@@ -44,7 +44,7 @@ export default function ProjectsCard() {
         {/* ====== 프로젝트 1 ====== */}
         {/* 썸네일 이미지: public/projects/portfolio.webp */}
         <Card variant="tile" className="flex flex-col gap-4">
-          <a href="https://djtapo21-del.github.io/my-portpolio" target="_blank" rel="noopener noreferrer" className="block">
+          <a href="https://djtapo21-del.github.io/KNationalPark-Personal/" target="_blank" rel="noopener noreferrer" className="block">
             <div className="relative w-full aspect-video shrink-0 overflow-hidden block rounded-xl group/thumb cursor-pointer">
               <AutoImage
                 src="/projects/project01.png"
@@ -154,7 +154,7 @@ export default function ProjectsCard() {
           <div className="flex-1 flex flex-col justify-between text-left gap-3">
             <div className="flex flex-col gap-y-1.5">
               <Title className="text-base leading-snug line-clamp-1">SK 텔레콤</Title>
-              <Body className="line-clamp-2 mt-1">SK 텔레콤 공식 사이트를 분석하여 반응형 레이아웃과 UI 컴포넌트를 동일하게 구현한 클론 프로젝트</Body>
+              <Body className="line-clamp-2 mt-1">공식 사이트를 분석하여 반응형 레이아웃과 UI 컴포넌트를 동일하게 구현한 클론 프로젝트</Body>
             </div>
 
             <div className="flex flex-wrap gap-1.5">
