@@ -2,7 +2,8 @@
 import ContactCard from './components/ContactCard'
 import AboutCard from './components/AboutCard'
 import SkillsCard from './components/SkillsCard'
-import ProjectCard from './components/ProjectCard' // s 없이 수입
+import ProjectCard from './components/ProjectCard'
+import DetailCard from './components/DetailCard'
 import { Label } from './components/ui/Text'
 
 export default function App() {
@@ -13,7 +14,8 @@ export default function App() {
         <ContactCard />
         <AboutCard />
         <SkillsCard />
-        <ProjectCard />   {/* s 없이 호출 완료 (에러 발생 안 함!) */}
+        <ProjectCard />
+        <DetailCard />
       </div>
 
       <footer className="mt-auto">
