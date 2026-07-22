@@ -8,9 +8,9 @@ import { Label } from './components/ui/Text'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-page-bg p-4 md:p-12 flex flex-col items-center justify-start gap-y-16 w-full">
+    <div className="min-h-screen bg-page-bg px-0 py-4 md:p-12 flex flex-col items-center justify-start gap-y-16 w-full">
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-6xl">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-4 w-full max-w-6xl">
         <ContactCard />
         <AboutCard />
         <SkillsCard />

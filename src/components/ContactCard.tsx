@@ -1,27 +1,33 @@
 // src/components/ContactCard.tsx
 import { useState } from 'react'
 import { Card } from './ui/Card'
-import { Body, SubTitle, Label, Caption } from './ui/Text'
+import { Title, Body, SubTitle, Label, Caption } from './ui/Text'
 
 export default function ContactCard() {
   const [resumeOpen, setResumeOpen] = useState(false)
-  const mobileDivider = <div className="h-px bg-white/5 md:hidden w-full" />;
+  const mobileDivider = <div className="h-px bg-white/5 md:hidden w-full my-6" />;
 
   return (
     <Card span={2}>
-      {/* 1. 상단 메인 인사말 */}
-      <div className="flex flex-col gap-3 pb-4 border-b border-white/[0.06]">
-        <h1 className="text-2xl md:text-3xl font-semibold text-white tracking-wide leading-tight">
-          AI 시대에 발맞춘 디자이너 <span className="text-brand-high">문정우</span>입니다.
-        </h1>
+      <div className="flex flex-col gap-1.5 pb-4 border-b border-white/[0.06]">
+        <Title className="text-2xl md:text-3xl">
+          AI 시대에 발맞춘<br />
+          <span className="text-brand-high">디자이너 문정우</span>입니다.
+        </Title>
+        <button
+          onClick={() => setResumeOpen(true)}
+          className="mt-2 w-full md:w-fit text-sm font-bold text-brand-high bg-brand-high/10 border border-brand-high/20 rounded-lg px-5 py-2.5 hover:bg-brand-high/20 hover:text-white cursor-pointer"
+        >
+          자기소개서 보기 →
+        </button>
       </div>
 
-      {/* 2. 하단 리스트 그리드 */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-auto">
+      {/* 2. 하단 리스트 그리드 (모바일에서는 gap을 0으로 만들어 모듈 분리감을 없앰) */}
+      <div className="flex flex-col md:grid md:grid-cols-2 gap-0 md:gap-4 mt-auto">
 
         {/* 인적 사항 타일 */}
         <Card variant="tile">
-          <div className="flex flex-col gap-y-3.5">
+          <div className="flex flex-col gap-y-3.5 pt-4 md:pt-0">
             <div className="flex flex-col gap-y-0.5">
               <Label>Birth</Label>
               <SubTitle>97년생 / 만 29세</SubTitle>
@@ -43,19 +49,13 @@ export default function ContactCard() {
               <Label>Job Status</Label>
               <SubTitle>신입 / 정규직 희망</SubTitle>
             </div>
-            <button
-              onClick={() => setResumeOpen(true)}
-              className="w-fit text-xs font-bold text-brand-high bg-brand-high/10 border border-brand-high/20 rounded-lg px-3 py-1.5 hover:bg-brand-high/20 hover:text-white transition-all duration-300 mt-1"
-            >
-              자기소개서 보기 →
-            </button>
           </div>
         </Card>
 
         {mobileDivider}
 
         {/* 오른쪽 영역 */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-0 md:gap-4">
           {/* 자격증 타일 */}
           <Card variant="tile" className="flex-1">
             <div className="flex flex-col gap-3">
@@ -83,7 +83,7 @@ export default function ContactCard() {
 
           {/* 연락처 타일 */}
           <Card variant="tile">
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 pb-4 md:pb-0">
               <Label>Contact Channel</Label>
               <div className="flex flex-col gap-y-3.5 pt-1.5">
                 <div className="flex items-center gap-x-3 text-text-body">
@@ -122,7 +122,7 @@ export default function ContactCard() {
               </h2>
               <button
                 onClick={() => setResumeOpen(false)}
-                className="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-gray-700 transition-colors duration-200 text-xl leading-none"
+                className="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-gray-700 text-xl leading-none"
               >
                 ✕
               </button>

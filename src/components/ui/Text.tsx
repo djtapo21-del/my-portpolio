@@ -30,5 +30,5 @@ export function Status({ className, children }: { className?: string; children: 
 }
 
 export function Interactive({ className, children }: { className?: string; children: React.ReactNode }) {
-  return <span className={cn("text-sm font-medium text-text-body transition-colors group-hover:text-white duration-300", className)}>{children}</span>;
+  return <span className={cn("text-sm font-medium text-text-body group-hover:text-white", className)}>{children}</span>;
 }

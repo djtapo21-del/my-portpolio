@@ -8,15 +8,15 @@ export default function SkillsCard() {
 
     return (
         <Card span={3} className="text-left gap-6">
-            <div className="flex flex-col gap-2 pb-4 border-b border-white/[0.06]">
+            <div className="flex flex-col gap-1.5 pb-4 border-b border-white/[0.06]">
                 <Title>핵심 역량</Title>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-auto">
 
                 {/* 디자인 타일 */}
-                <Card variant="tile" className="p-0 md:p-5 gap-4">
-                    <Label className="text-brand-high">Graphic Design</Label>
+                <Card variant="tile" className="gap-4">
+                    <Label>Graphic Design</Label>
                     <div className="space-y-3">
                         <div className="flex justify-between items-center">
                             <Tag color="blue">Photoshop</Tag>
@@ -32,8 +32,8 @@ export default function SkillsCard() {
                 {mobileDivider}
 
                 {/* 미디어 & UI 타일 */}
-                <Card variant="tile" className="p-0 md:p-5 gap-4">
-                    <Label className="text-brand-mid">Media & UI</Label>
+                <Card variant="tile" className="gap-4">
+                    <Label>Media & UI</Label>
                     <div className="space-y-3">
                         <div className="flex justify-between items-center">
                             <Tag color="sky">Figma</Tag>
@@ -49,7 +49,7 @@ export default function SkillsCard() {
                 {mobileDivider}
 
                 {/* 웹 기초 타일 */}
-                <Card variant="tile" className="p-0 md:p-5 gap-4">
+                <Card variant="tile" className="gap-4">
                     <Label>Web Basics</Label>
                     <div className="space-y-3">
                         <div className="flex justify-between items-center">

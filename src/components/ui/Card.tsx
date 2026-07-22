@@ -43,12 +43,12 @@ export function Card({
   };
 
   const variants = {
-    default: "bg-surface border-card-border p-6 md:p-8 rounded-3xl h-full text-left border",
+    default: "bg-transparent border-t-2 border-white/15 first:border-t-0 py-8 px-4 rounded-none md:bg-surface md:border md:border-card-border md:p-8 md:rounded-3xl h-full text-left",
 
     // 핵심 수정: border-transparent 를 border-none 으로 전면 교체하여 부모의 divide-y 필터링 차단 해결
     tile: "bg-transparent border-none p-0 rounded-none md:bg-white/[0.03] md:border-white/[0.05] md:p-5 md:rounded-2xl md:border",
 
-    interactive: "bg-surface border-card-border hover:bg-white/10 hover:border-white/20 transition-all cursor-pointer active:scale-[0.98] group rounded-2xl p-3 flex flex-row items-center justify-between gap-0"
+    interactive: "bg-surface border-card-border hover:bg-white/10 hover:border-white/20 cursor-pointer group rounded-2xl p-3 flex flex-row items-center justify-between gap-0"
   };
 
   const resolvedGap = gap || (variant === 'tile' ? 'small' : 'medium');

@@ -106,7 +106,7 @@ export default function DetailViewer({ open, onClose, content }: DetailViewerPro
                     </h2>
                     <button
                         onClick={onClose}
-                        className="w-8 h-8 flex items-center justify-center text-white/60 hover:text-white transition-colors duration-200 text-xl leading-none"
+                        className="w-8 h-8 flex items-center justify-center text-white/60 hover:text-white text-xl leading-none"
                     >
                         ✕
                     </button>

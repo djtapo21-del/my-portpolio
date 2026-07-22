@@ -199,11 +199,11 @@ export default function DetailCard() {
                         <div key={idx}>
                             <Card
                                 variant="tile"
-                                className="flex flex-col gap-4 cursor-pointer group/card"
+                                className="flex flex-col gap-4 cursor-pointer hover:border-white/30 hover:bg-white/[0.05]"
                                 onClick={() => openViewer(content)}
                             >
                                 {/* 썸네일 이미지 */}
-                                <div className="relative w-full aspect-video shrink-0 overflow-hidden rounded-xl border border-white/[0.06] group-hover/card:border-white/20 transition-colors duration-300">
+                                <div className="relative w-full aspect-video shrink-0 overflow-hidden rounded-xl border border-white/[0.06]">
                                     <ThumbImage src={content.thumbnail} alt={content.title} />
                                 </div>
 
@@ -215,9 +215,6 @@ export default function DetailCard() {
                                     <Body className="line-clamp-2">
                                         {content.description}
                                     </Body>
-                                    <span className="text-xs font-bold text-brand-high group-hover/card:text-white transition-colors duration-300 mt-1">
-                                        상세 보기 →
-                                    </span>
                                 </div>
                             </Card>
                         </div>

@@ -21,7 +21,7 @@ export function Tag({
 
   return (
     // font-black(900) 대신 font-semibold(600)로 변경
-    <span className={cn("px-2.5 py-1 rounded-lg text-xs font-semibold border", styles[color], className)}>
+    <span className={cn("px-2 py-0.5 md:px-2.5 md:py-1 rounded-md md:rounded-lg text-[10px] md:text-xs font-semibold border", styles[color], className)}>
       {children}
     </span>
   );
