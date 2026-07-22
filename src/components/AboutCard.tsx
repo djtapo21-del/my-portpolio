@@ -6,25 +6,23 @@ export default function AboutCard() {
     const mobileDivider = <div className="h-px bg-white/5 md:hidden w-full" />;
 
     return (
-        // 1단계 외곽 카드
         <Card span={1} gap="medium">
 
-            {/* 1단계 부모 카드 상단 헤더 (이 눈높이가 기준선이 됩니다) */}
+            {/* 헤더 */}
             <div className="flex flex-col gap-1.5 pb-4 border-b border-white/[0.06]">
-                <Title>Career Info</Title>
-                <Body>실무 활동 및 주요 프로젝트 내역입니다.</Body>
+                <Title>경력 사항</Title>
             </div>
 
-            {/* 2단계 내부 이력 리스트 (수기 패딩 p-4를 지워 모바일 좌우 정렬선을 100% 일치시킴) */}
+            {/* 이력 리스트 */}
             <div className="flex flex-col gap-3">
 
                 {/* 이력 1 */}
                 <Card variant="tile" className="gap-1.5">
                     <div className="flex items-center justify-between">
-                        <SubTitle>(주)디자인테크</SubTitle>
-                        <Caption>23.07 - 23.12</Caption>
+                        <SubTitle>(주)인터빅뱅</SubTitle>
+                        <Caption>22.07 - 25.10</Caption>
                     </div>
-                    <Body className="text-xs">반응형 웹 퍼블리싱 및 UI 컴포넌트 개발</Body>
+                    <Body className="text-xs">시각디자인 | 3년 4개월</Body>
                 </Card>
 
                 {mobileDivider}
@@ -32,10 +30,10 @@ export default function AboutCard() {
                 {/* 이력 2 */}
                 <Card variant="tile" className="gap-1.5">
                     <div className="flex items-center justify-between">
-                        <SubTitle>교내 캡스톤 프로젝트</SubTitle>
-                        <Caption>23.03 - 23.06</Caption>
+                        <SubTitle>어크로스</SubTitle>
+                        <Caption>21.05 - 22.07</Caption>
                     </div>
-                    <Body className="text-xs">위치 기반 커뮤니티 애플리케이션 프론트엔드 개발</Body>
+                    <Body className="text-xs">주문관리 | 1년 3개월</Body>
                 </Card>
 
                 {mobileDivider}
@@ -43,12 +41,30 @@ export default function AboutCard() {
                 {/* 이력 3 */}
                 <Card variant="tile" className="gap-1.5">
                     <div className="flex items-center justify-between">
-                        <SubTitle>개인 프리랜서</SubTitle>
-                        <Caption>22.09 - 22.12</Caption>
+                        <SubTitle>케이프타운</SubTitle>
+                        <Caption>21.03 - 21.05</Caption>
                     </div>
-                    <Body className="text-xs">소상공인 맞춤형 브랜드 웹사이트 제작 및 배포</Body>
+                    <Body className="text-xs">창고관리 | 3개월</Body>
                 </Card>
 
+                {mobileDivider}
+
+                {/* 이력 4 */}
+                <Card variant="tile" className="gap-1.5">
+                    <div className="flex items-center justify-between">
+                        <SubTitle>어크로스</SubTitle>
+                        <Caption>21.01 - 21.03</Caption>
+                    </div>
+                    <Body className="text-xs">창고관리 | 3개월</Body>
+                </Card>
+
+            </div>
+
+            {/* 하단 설명 */}
+            <div className="pt-3 border-t border-white/[0.06] mt-auto">
+                <Body className="text-xs text-white/40 leading-relaxed">
+                    ※ 위 회사들은 동일 회사로, 근무 기간 중 사명이 변경되었습니다.
+                </Body>
             </div>
         </Card>
     )

@@ -3,6 +3,28 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
 import { cn } from '../lib/utils'
 
+// ── 이미지 폴백 ──
+function ViewerImage({ src, alt }: { src: string; alt: string }) {
+    const [error, setError] = useState(false)
+
+    if (error) {
+        return (
+            <div className="w-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center aspect-[16/9]">
+                <span className="text-sm text-white/30 font-mono">{src}</span>
+            </div>
+        )
+    }
+
+    return (
+        <img
+            src={src}
+            alt={alt}
+            className="w-full"
+            onError={() => setError(true)}
+        />
+    )
+}
+
 // ── 타입 정의 ──
 export interface ContentItem {
     title?: string
@@ -70,24 +92,21 @@ export default function DetailViewer({ open, onClose, content }: DetailViewerPro
 
     return (
         <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
+            className="fixed inset-0 z-50 bg-black/90"
             onClick={onClose}
         >
             <div
-                className={cn(
-                    "relative w-full max-w-5xl mx-4 max-h-[90vh] flex flex-col",
-                    "bg-surface/95 border border-white/[0.06] rounded-2xl overflow-hidden"
-                )}
+                className="h-full w-full max-w-4xl mx-auto flex flex-col"
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* ── 헤더 ── */}
-                <div className="flex items-center justify-between px-6 py-4 border-b border-white/[0.06] shrink-0">
-                    <h2 className="text-lg font-semibold text-white tracking-wide">
+                <div className="flex items-center justify-between px-4 md:px-8 py-4 shrink-0">
+                    <h2 className="text-base md:text-lg font-semibold text-white/90 tracking-wide">
                         {content.title}
                     </h2>
                     <button
                         onClick={onClose}
-                        className="w-8 h-8 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-white/60 hover:text-white transition-colors duration-200 text-lg leading-none"
+                        className="w-8 h-8 flex items-center justify-center text-white/60 hover:text-white transition-colors duration-200 text-xl leading-none"
                     >
                         ✕
                     </button>
@@ -97,7 +116,7 @@ export default function DetailViewer({ open, onClose, content }: DetailViewerPro
                 <div
                     ref={scrollRef}
                     className={cn(
-                        "flex-1 overflow-y-auto overscroll-contain p-4 md:p-8 space-y-8",
+                        "flex-1 overflow-y-auto overscroll-contain px-4 md:px-8 space-y-6 pb-8",
                         isDragging ? "cursor-grabbing select-none" : "cursor-grab"
                     )}
                     onMouseDown={handleMouseDown}
@@ -106,32 +125,10 @@ export default function DetailViewer({ open, onClose, content }: DetailViewerPro
                     onMouseLeave={handleMouseUp}
                 >
                     {content.items.map((item, idx) => (
-                        <div key={idx} className="flex flex-col items-center gap-3">
-                            {/* 제목 (있을 때만) */}
-                            {item.title && (
-                                <h3 className="text-base font-semibold text-white/90 w-full text-left">
-                                    {item.title}
-                                </h3>
-                            )}
-
-                            {/* 설명 (있을 때만) */}
-                            {item.description && (
-                                <p className="text-sm text-white/50 w-full text-left -mt-2">
-                                    {item.description}
-                                </p>
-                            )}
-
-                            {/* 이미지 (예시: 색상 박스 — 실제 이미지로 교체) */}
-                            <div className="w-full rounded-xl overflow-hidden bg-gradient-to-br from-purple-500/20 to-blue-500/20 border border-white/[0.06] flex items-center justify-center aspect-[16/9] md:aspect-video">
-                                <span className="text-sm text-white/30 font-mono">
-                                    {item.image}
-                                </span>
-                            </div>
+                        <div key={idx} className="flex flex-col items-center">
+                            <ViewerImage src={item.image} alt={item.title || content.title} />
                         </div>
                     ))}
-
-                    {/* 하단 여백 */}
-                    <div className="h-4" />
                 </div>
             </div>
         </div>

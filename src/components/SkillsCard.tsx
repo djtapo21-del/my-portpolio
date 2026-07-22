@@ -1,6 +1,6 @@
 // src/components/SkillsCard.tsx
 import { Card } from './ui/Card'
-import { Title, Body, Label, Status, Caption } from './ui/Text'
+import { Title, Label, Status, Caption } from './ui/Text'
 import { Tag } from './ui/Tag'
 
 export default function SkillsCard() {
@@ -9,8 +9,7 @@ export default function SkillsCard() {
     return (
         <Card span={3} className="text-left gap-6">
             <div className="flex flex-col gap-2 pb-4 border-b border-white/[0.06]">
-                <Title>Tech Stack</Title>
-                <Body>디자인 실무 역량과 웹 퍼블리싱 기초를 바탕으로 다채로운 결과물을 만들어냅니다.</Body>
+                <Title>핵심 역량</Title>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-auto">
